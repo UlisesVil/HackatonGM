@@ -1,1 +1,94 @@
-<p>register works!</p>
+<div class="wrapper">
+  <form #registerForm= "ngForm" (ngSubmit)="onSubmit(registerForm)" >
+    <input
+      type="text"
+      name="nombre"
+      #nombre="ngModel"
+      [(ngModel)]="member.nombre"
+      placeholder="Nombre"
+      required
+    >
+    <span class="form_error" *ngIf="nombre.touched && !nombre.valid">
+      <strong>*El Nombre es requerido</strong>
+    </span>
+
+    <input
+      type="text"
+      name="linkedin"
+      #linkedin="ngModel"
+      [(ngModel)]="member.linkedin"
+      placeholder="linkedin"
+      required
+    >
+    <span class="form_error" *ngIf="linkedin.touched && !linkedin.valid">
+      <strong>*Your Last Name is required</strong>
+    </span>
+
+
+    <input
+      type="text"
+      name="pagweb"
+      #pagweb="ngModel"
+      [(ngModel)]="member.pagweb"
+      placeholder="pagweb"
+      required
+    >
+    <span class="form_error" *ngIf="pagweb.touched && !pagweb.valid">
+      <strong>*Your Last Name is required</strong>
+    </span>
+
+
+    <input
+      type="text"
+      name="pais"
+      #pais="ngModel"
+      [(ngModel)]="member.pais"
+      placeholder="pais"
+      required
+    >
+    <span class="form_error" *ngIf="pais.touched && !pais.valid">
+      <strong>*Your Last Name is required</strong>
+    </span>
+
+
+    <textarea
+      cols="30"
+      rows="6"
+      name="descripcion"
+      #descripcion="ngModel"
+      [(ngModel)]="member.descripcion"
+      placeholder="descripcion"
+      required
+    >
+    </textarea>
+    <span class="form_error" *ngIf="descripcion.touched && !descripcion.valid">
+      <strong>*Password is required</strong>
+    </span>
+
+
+    <input
+      type="password"
+      name="password"
+      #password="ngModel"
+      [(ngModel)]="member.password"
+      placeholder="Password"
+      required
+    >
+    <span class="form_error" *ngIf="password.touched && !password.valid">
+      <strong>*Password is required</strong>
+    </span>
+
+
+
+
+    <input
+      type="password"
+      name="passwordConfirm"
+      #passwordConfirm="ngModel"
+      [(ngModel)]="confirm"
+      placeholder="Confirm Password"
+      required
+    >
+    <input class="submit" type="submit" value="Sign Up">
+  </form>
+</div>
