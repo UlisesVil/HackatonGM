@@ -1,17 +1,31 @@
 <div class="wrapper">
-  <form #registerForm= "ngForm" (ngSubmit)="onSubmit(registerForm)" >
+  <form [formGroup]="form" (ngSubmit)="registrar()">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="correo"
+        placeholder="Correo electrónico"
+        formControlName="mail"
+        required
+      >
+      <mat-error>
+        <span class="form_error">
+          <strong>*El correo es requerido</strong>
+        </span>
+      </mat-error>
+    </mat-form-field>
     <mat-form-field>
       <input
         matInput
         type="text"
         name="nombre"
-        #nombre="ngModel"
-        [(ngModel)]="member.nombre"
         placeholder="Nombre"
+        formControlName="nombre"
         required
       >
       <mat-error>
-        <span class="form_error" *ngIf="nombre.touched && !nombre.valid">
+        <span class="form_error">
           <strong>*El Nombre es requerido</strong>
         </span>
       </mat-error>
@@ -22,13 +36,12 @@
         matInput
         type="text"
         name="linkedin"
-        #linkedin="ngModel"
-        [(ngModel)]="member.linkedin"
+        formControlName="linkedin"
         placeholder="linkedin"
         required
       >
       <mat-error>
-        <span class="form_error" *ngIf="linkedin.touched && !linkedin.valid">
+        <span class="form_error">
           <strong>*Your Last Name is required</strong>
         </span>
       </mat-error>
@@ -39,13 +52,12 @@
         matInput
         type="text"
         name="pagweb"
-        #pagweb="ngModel"
-        [(ngModel)]="member.pagweb"
         placeholder="pagweb"
+        formControlName="pagweb"
         required
       >
       <mat-error>
-        <span class="form_error" *ngIf="pagweb.touched && !pagweb.valid">
+        <span class="form_error">
           <strong>*Your Last Name is required</strong>
         </span>
       </mat-error>
@@ -56,13 +68,12 @@
         matInput
         type="text"
         name="pais"
-        #pais="ngModel"
-        [(ngModel)]="member.pais"
         placeholder="pais"
+        formControlName="pais"
         required
       >
       <mat-error>
-        <span class="form_error" *ngIf="pais.touched && !pais.valid">
+        <span class="form_error">
           <strong>*Your Last Name is required</strong>
         </span>
      </mat-error>
@@ -74,14 +85,13 @@
         cols="30"
         rows="6"
         name="descripcion"
-        #descripcion="ngModel"
-        [(ngModel)]="member.descripcion"
         placeholder="descripcion"
+        formControlName="descripcion"
         required
       >
       </textarea>
       <mat-error>
-        <span class="form_error" *ngIf="descripcion.touched && !descripcion.valid">
+        <span class="form_error">
           <strong>*Password is required</strong>
         </span>
       </mat-error>
@@ -92,13 +102,12 @@
       matInput
         type="password"
         name="password"
-        #password="ngModel"
-        [(ngModel)]="member.password"
         placeholder="Password"
+        formControlName="clave"
         required
       >
       <mat-error>
-        <span class="form_error" *ngIf="password.touched && !password.valid">
+        <span class="form_error">
           <strong>*Password is required</strong>
         </span>
       </mat-error>
@@ -108,9 +117,8 @@
      matInput
       type="password"
       name="passwordConfirm"
-      #passwordConfirm="ngModel"
-      [(ngModel)]="confirm"
       placeholder="Confirm Password"
+      formControlName="confirmPassword"
       required
     >
     <button mat-raised-button color="primary" type="submit">Registro</button>

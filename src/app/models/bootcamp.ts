@@ -1,4 +1,4 @@
-export interface Bootcamp {
+export class Bootcamp {
     id: string;
     descripcion: string;
 }

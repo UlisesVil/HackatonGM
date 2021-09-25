@@ -1,7 +1,7 @@
 import { Usuario } from './usuario';
 import { Bootcamp } from './bootcamp';
 
-export interface Perfil {
+export class Perfil {
     id: string;
     nombre: string;
     linkedin: string;
@@ -9,6 +9,5 @@ export interface Perfil {
     pais: string;
     descripcion: string;
     usuario: Usuario;
-    password: string;
     bootcamps: Bootcamp[];
 }
