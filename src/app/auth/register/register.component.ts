@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/models/usuario';
 import { Perfil } from '../../models/perfil'
 import { PasswordValidation } from '../utils/matchPassword';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,12 +13,19 @@ import { PasswordValidation } from '../utils/matchPassword';
 export class RegisterComponent implements OnInit {
 
   form: FormGroup;
+  entity: string;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private rutaActiva: ActivatedRoute
+    ) {
     this.crearFormulario();
   }
 
   ngOnInit(): void {
+    this.entity = this.rutaActiva.snapshot.params.entity;
+    console.log(this.entity);
+
   }
 
   crearFormulario(): void {
