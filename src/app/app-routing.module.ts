@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { PagesComponent } from './pages/pages.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {LoginComponent} from './auth/login/login.component';
+import {RegisterComponent} from './auth/register/register.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'registro/:entity', component: RegisterComponent},
-  {path: 'home', component: PagesComponent},
-  {path: '', redirectTo:'/login', pathMatch:'full'}
-
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {
+    path: 'newsFeed',
+    loadChildren: () => import('src/app/news-feed/news-feed.module').then(m => m.NewsFeedModule)
+  }
 
 ];
 
@@ -17,4 +18,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

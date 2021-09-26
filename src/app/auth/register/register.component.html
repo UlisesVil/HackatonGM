@@ -3,6 +3,18 @@
   <div class="card-form">
     <form [formGroup]="form" (ngSubmit)="registrar()">
       <h1 class="title-register">INGRESE DATOS {{form.value.entidad === 'empresa' ? 'DE LA' : 'DEL'}} {{form.value.entidad}}</h1>
+
+      <div>
+        <mat-form-field appearance="fill" style="width: 95%; padding: 10px">
+          <mat-label>Entidad</mat-label>
+          <mat-select formControlName="entidad" name="food" required>
+            <mat-option *ngFor="let e of entidades" [value]="e.value">
+              {{e.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
       <mat-form-field class="group">
         <input
           matInput
@@ -75,15 +87,6 @@
           formControlName="confirmPassword"
           required
         >
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Entidad</mat-label>
-        <mat-select formControlName="entidad" name="food" required>
-          <mat-option *ngFor="let e of entidades" [value]="e.value">
-            {{e.name}}
-          </mat-option>
-        </mat-select>
       </mat-form-field>
 
       <mat-form-field class="textAreagroup">

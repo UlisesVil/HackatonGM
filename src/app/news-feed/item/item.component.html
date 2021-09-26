@@ -1,0 +1,19 @@
+<div>
+  <h1>{{bootcamp.title}}</h1>
+  <form class="example-form" [formGroup]="formInput">
+    <mat-form-field class="textAreagroup">
+      <textarea matInput
+                rows="4"
+                name="description"
+                placeholder="Descripcion del bootcamp"
+                formControlName="description"
+                required>
+      </textarea>
+      <mat-error>
+        <span class="form_error">
+          <strong>Escribe una descripcion</strong>
+        </span>
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>

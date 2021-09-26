@@ -1,0 +1,8 @@
+<div style="display: flex; justify-content: space-between">
+  <h1>Bootcamps</h1>
+  <h2>Mis bootcamps</h2>
+  <button mat-raised-button color="primary" type="submit">Crear bootcamp</button>
+</div>
+<div *ngFor="let bootcamp of bootcamps; index as i">
+  <app-item [bootcamp]="bootcamp"></app-item>
+</div>
