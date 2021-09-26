@@ -11,8 +11,8 @@ import {Usuario} from '../../models/usuario';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  entity:string;
-  modal: boolean=false;
+  entity: string;
+  modal: boolean;
 
   constructor(private fb: FormBuilder) {
     this.crearFormulario();
@@ -56,13 +56,14 @@ export class LoginComponent implements OnInit {
   }
 
 
-  registerActivate(entity){
-    this.entity=entity;
-    this.modal=true;
+  registerActivate(entity): void {
+    this.entity = entity;
+    this.modal = true;
     console.log(entity);
 
   }
-  modalOff(e){
-    this.modal=e.modal;
+
+  modalOff(e): void {
+    this.modal = e.modal;
   }
 }

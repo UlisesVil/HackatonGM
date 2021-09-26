@@ -15,7 +15,7 @@
 }
 
 .group{
-  width: 45%;
+  width: 90%;
   min-width: 200px;
   padding: 10px;
 }
@@ -82,4 +82,9 @@ input:-webkit-autofill {
 .btn_reg{
   display: flex;
   justify-content: flex-end;
+}
+
+.btn_pos{
+  display: flex;
+  justify-content: space-between;
 }

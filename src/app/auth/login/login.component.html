@@ -1,11 +1,11 @@
 <div class="wrapper">
-  
+
 
   <mat-card>
     <mat-card-title>Hackathon Gentleman</mat-card-title>
     <mat-card-subtitle>Programming 2021</mat-card-subtitle>
     <mat-card-content>
-        
+
 
       <form [formGroup]="form" (ngSubmit)="login()">
 
@@ -24,7 +24,7 @@
             </span>
           </mat-error>
         </mat-form-field>
-    
+
         <mat-form-field class="group">
           <input
             matInput
@@ -40,18 +40,13 @@
             </span>
           </mat-error>
         </mat-form-field>
-    
 
-    
-        <div class="buttonCont">
-          <a class="registers"  (click)="registerActivate('usuario')">Registrar Usuario</a>
-          <a class="registers" (click)="registerActivate('empresa')">Registrar Empresa</a>
+        <div class="btn_pos">
+          <button mat-raised-button color="primary" type="submit" (click)="registerActivate('usuario')">REGISTRASE</button> <!--voy al modal de Registrar datos y dentro del modal eligo como deseo registrarem User / emmpresa-->
+          <button mat-raised-button color="primary" type="submit" [routerLink]="['/home']">INICIAR SESIÓN</button> <!--Luego de registrarme iniciar sesión-->
         </div>
-    
-        <button mat-raised-button color="primary" type="submit" (click)="registerActivate('usuario')">REGISTRASE</button> <!--voy al modal de Registrar datos y dentro del modal eligo como deseo registrarem User / emmpresa-->
-        <button mat-raised-button color="primary" type="submit" [routerLink]="['/home']">INICIAR SESIÓN</button> <!--Luego de registrarme iniciar sesión-->
 
-    
+
       </form>
 
 

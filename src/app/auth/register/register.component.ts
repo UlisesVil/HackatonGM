@@ -67,7 +67,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  modalOff() {
+  modalOff(): void {
     this.deactivateRegister.emit({
       modal: false,
       errorWarning: null
