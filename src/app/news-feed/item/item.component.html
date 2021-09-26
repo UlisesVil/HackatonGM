@@ -1,17 +1,17 @@
-<div>
+<div class="wrapper">
   <h1>{{bootcamp.title}}</h1>
   <form class="example-form" [formGroup]="formInput">
-    <mat-form-field class="textAreagroup">
+    <mat-form-field class="textAreaMat">
       <textarea matInput
                 rows="4"
                 name="description"
-                placeholder="Descripcion del bootcamp"
+                placeholder="Descripcion del {{bootcamp.title}}"
                 formControlName="description"
                 required>
       </textarea>
       <mat-error>
         <span class="form_error">
-          <strong>Escribe una descripcion</strong>
+          <strong>Escribe una descripcion para {{bootcamp.title}}</strong>
         </span>
       </mat-error>
     </mat-form-field>

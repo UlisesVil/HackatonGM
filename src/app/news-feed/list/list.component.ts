@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Bootcamp} from '../../models/bootcamp';
+import {BOOTCAMPS} from '../../models/mocks';
 
 @Component({
   selector: 'app-list',
@@ -14,6 +15,7 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.bootcamps = BOOTCAMPS;
   }
 
 }

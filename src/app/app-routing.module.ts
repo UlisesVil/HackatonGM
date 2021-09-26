@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: 'registro/:entity', component: RegisterComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {
-    path: 'newsFeed',
+    path: 'news-feed',
     loadChildren: () => import('src/app/news-feed/news-feed.module').then(m => m.NewsFeedModule)
   }
 
