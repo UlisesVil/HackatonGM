@@ -84,7 +84,3 @@ input:-webkit-autofill {
   justify-content: flex-end;
 }
 
-.btn_pos{
-  display: flex;
-  justify-content: space-between;
-}

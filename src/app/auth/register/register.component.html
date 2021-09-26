@@ -1,99 +1,110 @@
-<div class="wrapper" >
+<div class="wrapper">
 
-  <div class="title-register">INGRESE DATOS DE LA EMPRESA</div>
-  <form [formGroup]="form" (ngSubmit)="registrar()">
-    <p class="group">
-      {{entity}}
-    </p>
-    <mat-form-field class="group">
-      <input
-        matInput
-        type="text"
-        name="nombre"
-        placeholder="Nombre"
-        formControlName="nombre"
-        required
-      >
-      <mat-error>
+  <div class="card-form">
+    <form [formGroup]="form" (ngSubmit)="registrar()">
+      <h1 class="title-register">INGRESE DATOS {{form.value.entidad === 'empresa' ? 'DE LA' : 'DEL'}} {{form.value.entidad}}</h1>
+      <mat-form-field class="group">
+        <input
+          matInput
+          type="text"
+          name="nombre"
+          placeholder="Nombre"
+          formControlName="nombre"
+          required
+        >
+        <mat-error>
         <span class="form_error">
           <strong>Por favor escribe tu nombre</strong>
         </span>
-      </mat-error>
-    </mat-form-field>
+        </mat-error>
+      </mat-form-field>
 
 
-    <mat-form-field class="group">
-      <input matInput type="text" name="correo" placeholder="Correo Electrónico" formControlName="mail" required>
-      <mat-error>
+      <mat-form-field class="group">
+        <input matInput type="text" name="correo" placeholder="Correo Electrónico" formControlName="mail" required>
+        <mat-error>
         <span class="form_error">
           <strong>Ingresa tu e-mail</strong>
         </span>
-      </mat-error>
-    </mat-form-field>
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field class="group">
-      <input matInput type="text" name="linkedin" formControlName="linkedin" placeholder="Linkedin" required>
-      <mat-error>
+      <mat-form-field class="group">
+        <input matInput type="text" name="linkedin" formControlName="linkedin" placeholder="Linkedin" required>
+        <mat-error>
         <span class="form_error">
           <strong>Escribe tu LinkedIn</strong>
         </span>
-      </mat-error>
-    </mat-form-field>
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field class="group">
-      <input matInput type="text" name="pagweb" placeholder="Pagina Web" formControlName="pagweb"required>
-      <mat-error>
+      <mat-form-field class="group">
+        <input matInput type="text" name="pagweb" placeholder="{{form.value.entidad === 'empresa' ? 'Pagina web' : 'Github'}}" formControlName="pagweb" required>
+        <mat-error>
         <span class="form_error">
           <strong>Escribe tu pagina Web</strong>
         </span>
-      </mat-error>
-    </mat-form-field>
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field class="group">
-      <input matInput type="text" name="pais" placeholder="Pais" formControlName="pais" required>
-      <mat-error>
+      <mat-form-field class="group">
+        <input matInput type="text" name="pais" placeholder="Pais" formControlName="pais" required>
+        <mat-error>
         <span class="form_error">
           <strong>Cual es tu pais?</strong>
         </span>
-     </mat-error>
-    </mat-form-field>
+        </mat-error>
+      </mat-form-field>
 
 
-
-    <mat-form-field class="group">
-      <input matInput type="password" name="password" placeholder="Password" formControlName="clave" required>
-      <mat-error>
+      <mat-form-field class="group">
+        <input matInput type="password" name="password" placeholder="Password" formControlName="clave" required>
+        <mat-error>
         <span class="form_error">
           <strong>Es necesario escribir una Contraseña</strong>
         </span>
-      </mat-error>
-    </mat-form-field>
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field class="group">
-    <input
-      matInput
-      type="password"
-      name="passwordConfirm"
-      placeholder="Confirm Password"
-      formControlName="confirmPassword"
-      required
-    >
-    </mat-form-field>
+      <mat-form-field class="group">
+        <input
+          matInput
+          type="password"
+          name="passwordConfirm"
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+          required
+        >
+      </mat-form-field>
 
-    <mat-form-field class="textAreagroup">
-      <textarea matInput cols="30" rows="6" name="descripcion" placeholder="Descripcion" formControlName="descripcion"
-        required>
+      <mat-form-field appearance="fill">
+        <mat-label>Entidad</mat-label>
+        <mat-select formControlName="entidad" name="food" required>
+          <mat-option *ngFor="let e of entidades" [value]="e.value">
+            {{e.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="textAreagroup">
+      <textarea matInput
+                rows="4"
+                name="descripcion"
+                placeholder="Descripcion"
+                formControlName="descripcion"
+                required>
       </textarea>
-      <mat-error>
+        <mat-error>
         <span class="form_error">
           <strong>Escribe una descripcion</strong>
         </span>
-      </mat-error>
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Registro</button>
+        </mat-error>
+      </mat-form-field>
+    </form>
 
-
-
-  </form>
-  <button mat-raised-button color="primary" (click)="modalOff()" >Cerrar Registro</button>
+    <div class="btn_pos">
+      <button mat-raised-button color="primary" type="submit">Registro</button>
+      <button mat-raised-button color="primary" (click)="modalOff()">Cerrar Registro</button>
+    </div>
+  </div>
 </div>

@@ -12,7 +12,15 @@
   left: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.637);
+}
 
+textarea{
+  resize: none;
+}
+
+.title-register{
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .group{
@@ -22,11 +30,11 @@
 }
 .textAreagroup{
   width: 90%;
-  margin: 0 auto;
-  /* border: 1px solid red; */
+  min-width: 200px;
+  padding: 0 10px 10px;
 }
 
-form{
+.card-form{
   min-width: 200px;
   width: 500px;
   max-width: 500px;
@@ -34,10 +42,9 @@ form{
   justify-content: center;
   margin-top: 40px;
   /* border: 1px solid red; */
-  padding: 10px;
+  padding: 20px 10px;
   background-color: whitesmoke;
   border-radius: 5px;
-
 }
 
 textarea{

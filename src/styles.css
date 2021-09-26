@@ -6,6 +6,13 @@ body{
   background-color: #000000;
 }
 
+.btn_pos{
+  width: 90%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .mat-form-field .mat-input-element {
   color: #ff7cdb;
 }

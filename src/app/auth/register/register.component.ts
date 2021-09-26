@@ -15,6 +15,16 @@ export class RegisterComponent implements OnInit {
   @Output() deactivateRegister: EventEmitter<any> = new EventEmitter();
 
   form: FormGroup;
+  entidades: IEntidad[] = [
+    {
+      name: 'Usuario',
+      value: 'usuario'
+    },
+    {
+      name: 'Empresa',
+      value: 'empresa'
+    }
+  ];
 
   constructor(
     private fb: FormBuilder
@@ -24,7 +34,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.entity);
-
   }
 
   crearFormulario(): void {
@@ -36,7 +45,8 @@ export class RegisterComponent implements OnInit {
       descripcion: ['', [Validators.required]],
       mail: ['', [Validators.required]],
       clave: ['', [Validators.required]],
-      confirmPassword: ['', [Validators.required]]
+      confirmPassword: ['', [Validators.required]],
+      entidad: [this.entidades[0].value, [Validators.required]]
     }, {
       validator: PasswordValidation.MatchPassword
     });
@@ -73,4 +83,9 @@ export class RegisterComponent implements OnInit {
       errorWarning: null
     });
   }
+}
+
+interface IEntidad {
+  name: string;
+  value: string;
 }
