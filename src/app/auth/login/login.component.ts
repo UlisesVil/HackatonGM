@@ -11,8 +11,8 @@ import {Usuario} from '../../models/usuario';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  user = 'usuario';
-  company = 'empresa';
+  entity:string;
+  modal: boolean=false;
 
   constructor(private fb: FormBuilder) {
     this.crearFormulario();
@@ -53,5 +53,16 @@ export class LoginComponent implements OnInit {
       console.log(this.form.value);
       console.log('formulario invalido');
     }
+  }
+
+
+  registerActivate(entity){
+    this.entity=entity;
+    this.modal=true;
+    console.log(entity);
+
+  }
+  modalOff(e){
+    this.modal=e.modal;
   }
 }

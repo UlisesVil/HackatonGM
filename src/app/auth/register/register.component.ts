@@ -1,9 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {PasswordValidation} from '../utils/matchPassword';
-import {ActivatedRoute} from '@angular/router';
+import {Usuario} from 'src/app/models/usuario';
 import {Perfil} from '../../models/perfil';
-import {Usuario} from '../../models/usuario';
+import {PasswordValidation} from '../utils/matchPassword';
 
 @Component({
   selector: 'app-register',
@@ -12,18 +11,18 @@ import {Usuario} from '../../models/usuario';
 })
 export class RegisterComponent implements OnInit {
 
+  @Input() entity: string;
+  @Output() deactivateRegister: EventEmitter<any> = new EventEmitter();
+
   form: FormGroup;
-  entity: string;
 
   constructor(
-    private fb: FormBuilder,
-    private rutaActiva: ActivatedRoute
+    private fb: FormBuilder
   ) {
     this.crearFormulario();
   }
 
   ngOnInit(): void {
-    this.entity = this.rutaActiva.snapshot.params.entity;
     console.log(this.entity);
 
   }
@@ -68,4 +67,10 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  modalOff() {
+    this.deactivateRegister.emit({
+      modal: false,
+      errorWarning: null
+    });
+  }
 }
