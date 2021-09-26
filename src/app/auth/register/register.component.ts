@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Usuario} from 'src/app/models/usuario';
 import {Perfil} from '../../models/perfil';
 import {PasswordValidation} from '../utils/matchPassword';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-register',
@@ -27,7 +28,8 @@ export class RegisterComponent implements OnInit {
   ];
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private usuarioService: UsuarioService
   ) {
     this.crearFormulario();
   }
@@ -67,6 +69,12 @@ export class RegisterComponent implements OnInit {
         descripcion: this.form.value.descripcion,
         usuario
       };
+
+      this.usuarioService.registrarUsuario(usuario).subscribe(rs => {
+        this.usuarioService.registrarPerfil(perfil).subscribe(rs => {
+          console.log('registro perfil y usuario');
+        })
+      });
       console.log('objeto perfil');
       console.log(perfil);
       console.log(this.form.value);

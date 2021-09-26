@@ -1,7 +1,7 @@
 <div class="wrapper">
 
   <div class="card-form">
-    <form [formGroup]="form" (ngSubmit)="registrar()">
+    <form [formGroup]="form">
       <h1 class="title-register">INGRESE DATOS {{form.value.entidad === 'empresa' ? 'DE LA' : 'DEL'}} {{form.value.entidad}}</h1>
 
       <div>
@@ -106,7 +106,7 @@
     </form>
 
     <div class="btn_pos">
-      <button mat-raised-button color="primary" type="submit">Registro</button>
+      <button (click)="registrar()" mat-raised-button color="primary" type="submit">Registro</button>
       <button mat-raised-button color="primary" (click)="modalOff()">Cerrar Registro</button>
     </div>
   </div>
