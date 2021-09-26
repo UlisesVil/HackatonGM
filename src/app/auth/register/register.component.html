@@ -54,7 +54,7 @@
         <input matInput type="text" name="pagweb" placeholder="{{form.value.entidad === 'empresa' ? 'Pagina web' : 'Github'}}" formControlName="pagweb" required>
         <mat-error>
         <span class="form_error">
-          <strong>Escribe tu pagina Web</strong>
+          <strong>{{form.value.entidad === 'empresa' ? 'Escribe tu pagina Web' : 'Escribe tu Github'}}</strong>
         </span>
         </mat-error>
       </mat-form-field>
