@@ -1,21 +1,7 @@
 <div class="wrapper">
   <form [formGroup]="form" (ngSubmit)="registrar()">
-    <mat-form-field>
-      <input
-        matInput
-        type="text"
-        name="correo"
-        placeholder="Correo electrónico"
-        formControlName="mail"
-        required
-      >
-      <mat-error>
-        <span class="form_error">
-          <strong>*El correo es requerido</strong>
-        </span>
-      </mat-error>
-    </mat-form-field>
-    <mat-form-field>
+
+    <mat-form-field class="group">
       <input
         matInput
         type="text"
@@ -26,80 +12,81 @@
       >
       <mat-error>
         <span class="form_error">
-          <strong>*El Nombre es requerido</strong>
+          <strong>Por favor escribe tu nombre</strong>
         </span>
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+
+    <mat-form-field class="group">
+      <input
+        matInput
+        type="text"
+        name="correo"
+        placeholder="Correo Electrónico"
+        formControlName="mail"
+        required
+      >
+      <mat-error>
+        <span class="form_error">
+          <strong>Ingresa tu e-mail</strong>
+        </span>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="group">
       <input
         matInput
         type="text"
         name="linkedin"
         formControlName="linkedin"
-        placeholder="linkedin"
+        placeholder="Linkedin"
         required
       >
       <mat-error>
         <span class="form_error">
-          <strong>*Your Last Name is required</strong>
+          <strong>Escribe tu LinkedIn</strong>
         </span>
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="group">
       <input
         matInput
         type="text"
         name="pagweb"
-        placeholder="pagweb"
+        placeholder="Pagina Web"
         formControlName="pagweb"
         required
       >
       <mat-error>
         <span class="form_error">
-          <strong>*Your Last Name is required</strong>
+          <strong>Escribe tu pagina Web</strong>
         </span>
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="group">
       <input
         matInput
         type="text"
         name="pais"
-        placeholder="pais"
+        placeholder="Pais"
         formControlName="pais"
         required
       >
       <mat-error>
         <span class="form_error">
-          <strong>*Your Last Name is required</strong>
+          <strong>Cual es tu pais?</strong>
         </span>
      </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
-      <textarea
-        matInput
-        cols="30"
-        rows="6"
-        name="descripcion"
-        placeholder="descripcion"
-        formControlName="descripcion"
-        required
-      >
-      </textarea>
-      <mat-error>
-        <span class="form_error">
-          <strong>*Password is required</strong>
-        </span>
-      </mat-error>
-    </mat-form-field>
 
-    <mat-form-field>
+
+    <mat-form-field class="group">
       <input
-      matInput
+        matInput
         type="password"
         name="password"
         placeholder="Password"
@@ -108,20 +95,40 @@
       >
       <mat-error>
         <span class="form_error">
-          <strong>*Password is required</strong>
+          <strong>Es necesario escribir una Contraseña</strong>
         </span>
       </mat-error>
     </mat-form-field>
 
+    <mat-form-field class="group">
     <input
-     matInput
+      matInput
       type="password"
       name="passwordConfirm"
       placeholder="Confirm Password"
       formControlName="confirmPassword"
       required
     >
+    </mat-form-field>
+
+    <mat-form-field class="textAreagroup">
+      <textarea
+        matInput
+        cols="30"
+        rows="6"
+        name="descripcion"
+        placeholder="Descripcion"
+        formControlName="descripcion"
+        required
+      >
+      </textarea>
+      <mat-error>
+        <span class="form_error">
+          <strong>Escribe una descripcion</strong>
+        </span>
+      </mat-error>
+    </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Registro</button>
-    <!--<input class="submit" type="submit" value="Sign Up">-->
+
   </form>
 </div>
