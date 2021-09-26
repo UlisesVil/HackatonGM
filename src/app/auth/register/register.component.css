@@ -1,9 +1,9 @@
-
 .wrapper{
   position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
+<<<<<<< HEAD
   justify-content: center;
   width: 100%;
   height: 100%;
@@ -13,7 +13,11 @@
   left: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.637);
+=======
+
+>>>>>>> dda0e40992825a6c8c7abf381bf9d77b409959ec
   /*border: 1px solid red;*/
+
 }
 
 .group{

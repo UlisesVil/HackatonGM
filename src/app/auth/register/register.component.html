@@ -1,4 +1,6 @@
-<div class="wrapper">
+<div class="wrapper" >
+
+  <div class="title-register">INGRESE DATOS DE LA EMPRESA</div>
   <form [formGroup]="form" (ngSubmit)="registrar()">
     <p class="group">
       {{entity}}
@@ -21,14 +23,7 @@
 
 
     <mat-form-field class="group">
-      <input
-        matInput
-        type="text"
-        name="correo"
-        placeholder="Correo Electrónico"
-        formControlName="mail"
-        required
-      >
+      <input matInput type="text" name="correo" placeholder="Correo Electrónico" formControlName="mail" required>
       <mat-error>
         <span class="form_error">
           <strong>Ingresa tu e-mail</strong>
@@ -37,14 +32,7 @@
     </mat-form-field>
 
     <mat-form-field class="group">
-      <input
-        matInput
-        type="text"
-        name="linkedin"
-        formControlName="linkedin"
-        placeholder="Linkedin"
-        required
-      >
+      <input matInput type="text" name="linkedin" formControlName="linkedin" placeholder="Linkedin" required>
       <mat-error>
         <span class="form_error">
           <strong>Escribe tu LinkedIn</strong>
@@ -53,14 +41,7 @@
     </mat-form-field>
 
     <mat-form-field class="group">
-      <input
-        matInput
-        type="text"
-        name="pagweb"
-        placeholder="Pagina Web"
-        formControlName="pagweb"
-        required
-      >
+      <input matInput type="text" name="pagweb" placeholder="Pagina Web" formControlName="pagweb"required>
       <mat-error>
         <span class="form_error">
           <strong>Escribe tu pagina Web</strong>
@@ -69,14 +50,7 @@
     </mat-form-field>
 
     <mat-form-field class="group">
-      <input
-        matInput
-        type="text"
-        name="pais"
-        placeholder="Pais"
-        formControlName="pais"
-        required
-      >
+      <input matInput type="text" name="pais" placeholder="Pais" formControlName="pais" required>
       <mat-error>
         <span class="form_error">
           <strong>Cual es tu pais?</strong>
@@ -87,14 +61,7 @@
 
 
     <mat-form-field class="group">
-      <input
-        matInput
-        type="password"
-        name="password"
-        placeholder="Password"
-        formControlName="clave"
-        required
-      >
+      <input matInput type="password" name="password" placeholder="Password" formControlName="clave" required>
       <mat-error>
         <span class="form_error">
           <strong>Es necesario escribir una Contraseña</strong>
@@ -114,15 +81,8 @@
     </mat-form-field>
 
     <mat-form-field class="textAreagroup">
-      <textarea
-        matInput
-        cols="30"
-        rows="6"
-        name="descripcion"
-        placeholder="Descripcion"
-        formControlName="descripcion"
-        required
-      >
+      <textarea matInput cols="30" rows="6" name="descripcion" placeholder="Descripcion" formControlName="descripcion"
+        required>
       </textarea>
       <mat-error>
         <span class="form_error">
