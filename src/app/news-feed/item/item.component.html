@@ -4,8 +4,9 @@
     <app-text-area-list
       style="width: 100%"
       (descriptionValue)="descriptionSet($event)"
+      [isUser]="isUser"
       [title]="bootcamp.title"
       [description]="bootcamp.descripcion"></app-text-area-list>
-    <button *ngIf="isUser" mat-raised-button color="primary" type="button">Crear bootcamp</button>
+    <button *ngIf="isUser" mat-raised-button color="primary" type="button">Anotarse</button>
   </div>
 </div>

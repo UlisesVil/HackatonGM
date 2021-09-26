@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Bootcamp} from '../../models/bootcamp';
 
 @Component({
   selector: 'app-detail',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
+  @Input() bootcamp: Bootcamp = null;
+  @Input() isUser: boolean;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  descriptionSet(description: string): void {
+    console.log(description);
   }
 
 }

@@ -1,5 +1,5 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, Input, OnInit, Output, EventEmitter, OnDestroy} from '@angular/core';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-text-area-list',
@@ -10,32 +10,33 @@ export class TextAreaListComponent implements OnInit {
 
   @Input() title: string;
   @Input() description: string;
+  @Input() isUser: boolean;
   @Output() descriptionValue = new EventEmitter<string>();
 
-  formInput: FormGroup;
-  get descriptionFC(): FormControl {
-    return this.formInput.get('descriptionFC') as FormControl;
+  formInput: FormGroup = new FormGroup({
+    descriptionFC: new FormControl('', [Validators.required])
+  });
+  get descriptionFC(): AbstractControl {
+    return this.formInput.get('descriptionFC') as AbstractControl;
   }
   constructor() {
-    this.crearFormulario();
   }
 
   ngOnInit(): void {
-    console.log(this.description);
+    if (!this.isUser) {
+      this.descriptionFC.disable();
+    }
     this.descriptionFC.valueChanges.subscribe(() => {
       this.sendDescription();
     });
     this.descriptionFC.setValue(this.description);
-  }
-
-  crearFormulario(): void {
-    this.formInput = new FormGroup({
-      descriptionFC: new FormControl('', [Validators.required])
-    });
+    // if (this.isUser) {
+    //   this.descriptionFC.disabled();
+    // }
   }
 
   sendDescription(): void {
-    this.descriptionValue.emit(this.descriptionFC.value)
+    this.descriptionValue.emit(this.descriptionFC.value);
   }
 
 }
