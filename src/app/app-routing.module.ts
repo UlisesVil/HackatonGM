@@ -6,7 +6,7 @@ import { PagesComponent } from './pages/pages.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'registro/:entity', component: RegisterComponent},
   {path: 'home', component: PagesComponent},
   {path: '', redirectTo:'/login', pathMatch:'full'}
 
