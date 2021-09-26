@@ -5,8 +5,18 @@
       style="width: 100%"
       (descriptionValue)="descriptionSet($event)"
       [isUser]="isUser"
+      [areDetails]="areDetails"
       [title]="bootcamp.title"
       [description]="bootcamp.descripcion"></app-text-area-list>
-    <button *ngIf="isUser" mat-raised-button color="primary" type="button">Anotarse</button>
+    <button *ngIf="isUser && !areDetails" mat-raised-button color="primary" type="button">Anotarse</button>
+    <button *ngIf="isUser && areDetails" mat-raised-button color="primary" type="button">Cancelar</button>
+    <button *ngIf="!isUser && areDetails" mat-raised-button color="primary" type="button" (click)="onEdit()" style="margin-right: 5px">Editar</button>
+    <button *ngIf="!isUser && areDetails" mat-raised-button color="primary" type="button">Eliminar</button>
   </div>
 </div>
+
+<app-modal-bootcamp
+  (deactivateRegister)="modalOff($event)"
+  [bootcamp]="bootcamp"
+  *ngIf="modal">
+</app-modal-bootcamp>

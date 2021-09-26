@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Bootcamp} from '../../models/bootcamp';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {BOOTCAMPS_EMPRESA, BOOTCAMPS_USUARIO} from '../../models/mocks';
 
 @Component({
@@ -13,6 +13,8 @@ export class ListComponent implements OnInit {
   bootcamps: Bootcamp[] = [];
   idUsuario: string = null;
   rolUsuario: string = null;
+  areDetails: boolean;
+  modal: boolean;
 
   constructor(private route: ActivatedRoute) {
   }
@@ -38,6 +40,18 @@ export class ListComponent implements OnInit {
     } else {
       this.bootcamps = BOOTCAMPS_USUARIO;
     }
+  }
+
+  goDetails(): void {
+    this.areDetails = !this.areDetails;
+  }
+
+  onAdd(): void {
+    this.modal = true;
+  }
+
+  modalOff(e): void {
+    this.modal = e.modal;
   }
 
 }

@@ -1,0 +1,38 @@
+<div class="wrapper">
+
+  <div class="card-form">
+    <form [formGroup]="form">
+      <h1 class="title-register">EDITAR</h1>
+
+      <mat-form-field class="group">
+        <input matInput type="text" name="nombre" placeholder="Nombre"
+               formControlName="title" required>
+        <mat-error>
+        <span class="form_error">
+          <strong>Por favor escribe tu nombre</strong>
+        </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="textAreagroup">
+      <textarea matInput
+                rows="4"
+                name="descripcion"
+                placeholder="Descripcion"
+                formControlName="description"
+                required>
+      </textarea>
+        <mat-error>
+        <span class="form_error">
+          <strong>Escribe una descripcion</strong>
+        </span>
+        </mat-error>
+      </mat-form-field>
+
+    </form>
+
+    <div class="btn_pos">
+      <button mat-raised-button color="primary" type="submit">Guardar</button>
+      <button mat-raised-button color="primary" (click)="modalOff()">Cerrar</button>
+    </div>
+  </div>
+</div>
