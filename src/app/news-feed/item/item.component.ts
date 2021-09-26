@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Bootcamp} from '../../models/bootcamp';
 
 @Component({
@@ -9,20 +9,17 @@ import {Bootcamp} from '../../models/bootcamp';
 })
 export class ItemComponent implements OnInit {
 
-  formInput: FormGroup;
   @Input() bootcamp: Bootcamp = null;
+  @Input() isUser: boolean;
 
-  constructor(private fb: FormBuilder) {
-    this.crearFormulario();
+  constructor() {
   }
 
   ngOnInit(): void {
   }
 
-  crearFormulario(): void {
-    this.formInput = this.fb.group({
-      description: ['', [Validators.required]]
-    });
+  descriptionSet(description: string): void {
+    console.log(description);
   }
 
 }

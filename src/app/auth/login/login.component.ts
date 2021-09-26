@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PasswordValidation} from '../utils/matchPassword';
 import {Perfil} from '../../models/perfil';
 import {Usuario} from '../../models/usuario';
+import {Router} from '@angular/router';
+import {USERMOCKEM, USERMOCKUS} from '../../models/mocks';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,8 @@ export class LoginComponent implements OnInit {
   entity: string;
   modal: boolean;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private router: Router) {
     this.crearFormulario();
   }
 
@@ -35,6 +38,15 @@ export class LoginComponent implements OnInit {
 
 
   login(): void {
+    console.log('nos logeamos aqui');
+    this.redirectList(USERMOCKUS);
+  }
+
+
+  registerActivate(entity): void {
+    this.entity = entity;
+    this.modal = true;
+    console.log(entity);
     if (this.form.valid) {
       const usuario: Usuario = {
         mail: this.form.value.mail,
@@ -44,26 +56,28 @@ export class LoginComponent implements OnInit {
         nombre: this.form.value.nombre,
         usuario
       };
-
       console.log('objeto perfil');
       console.log(perfil);
       console.log(this.form.value);
       console.log('nos registramos yei');
+      this.redirectList(USERMOCKUS);
     } else {
       console.log(this.form.value);
       console.log('formulario invalido');
     }
   }
 
-
-  registerActivate(entity): void {
-    this.entity = entity;
-    this.modal = true;
-    console.log(entity);
-
+  redirectList(usuario: Usuario): void {
+    this.router.navigate(['/news-feed/list'], {
+      queryParams: {
+        id: usuario.id,
+        rol: usuario.rol
+      }
+    });
   }
 
   modalOff(e): void {
     this.modal = e.modal;
   }
 }
+

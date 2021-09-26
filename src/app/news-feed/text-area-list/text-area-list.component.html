@@ -1,0 +1,17 @@
+<form class="example-form" [formGroup]="formInput">
+  <mat-form-field style="width: 100%">
+      <textarea matInput
+                rows="4"
+                name="description"
+                placeholder="Descripcion del {{title}}"
+                formControlName="descriptionFC"
+                required>
+      </textarea>
+    <mat-error>
+        <span class="form_error">
+          <strong>Escribe una descripcion para {{title}}</strong>
+        </span>
+    </mat-error>
+  </mat-form-field>
+
+</form>

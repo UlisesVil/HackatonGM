@@ -8,10 +8,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { DetailComponent } from './detail/detail.component';
+import { TextAreaListComponent } from './text-area-list/text-area-list.component';
 
 
 @NgModule({
-  declarations: [ListComponent, ItemComponent],
+  declarations: [ListComponent, ItemComponent, DetailComponent, TextAreaListComponent],
   imports: [
     CommonModule,
     NewsFeedRoutingModule,
