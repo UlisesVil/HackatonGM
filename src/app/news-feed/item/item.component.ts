@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {PasswordValidation} from '../../auth/utils/matchPassword';
 import {Bootcamp} from '../../models/bootcamp';
 
 @Component({

@@ -1,9 +1,15 @@
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
+.textAreaMat{
   width: 100%;
 }
 
-.example-full-width {
-  width: 100%;
+h1, h2, h3, h4, h5, h6 {
+  color: #ff33cc;
+}
+
+textarea{
+  resize: none !important;
+}
+
+.wrapper{
+  padding: 25px 50px;
 }
