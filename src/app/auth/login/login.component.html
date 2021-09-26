@@ -62,11 +62,20 @@
     </mat-form-field>
 
     <div class="buttonCont">
-      <a class="registers" [routerLink]="['/registro', user]">Registrar Usuario</a>
-      <a class="registers" [routerLink]="['/registro', company]">Registrar Empresa</a>
+      <a class="registers"  (click)="registerActivate('usuario')">Registrar Usuario</a>
+      <a class="registers" (click)="registerActivate('empresa')">Registrar Empresa</a>
     </div>
 
     <button mat-raised-button color="primary" type="submit">Registro</button>
 
   </form>
 </div>
+
+
+<app-register
+  *ngIf="modal"
+  [entity]="entity"
+  (deactivateRegister)="modalOff($event)"
+></app-register>
+
+

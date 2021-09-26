@@ -1,6 +1,8 @@
 <div class="wrapper">
   <form [formGroup]="form" (ngSubmit)="registrar()">
-
+    <p class="group">
+      {{entity}}
+    </p>
     <mat-form-field class="group">
       <input
         matInput
@@ -130,5 +132,8 @@
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Registro</button>
 
+
+
   </form>
+  <button mat-raised-button color="primary" (click)="modalOff()" >Cerrar Registro</button>
 </div>
