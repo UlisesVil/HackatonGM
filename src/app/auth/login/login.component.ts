@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Usuario } from 'src/app/models/usuario';
-import { Perfil } from '../../models/perfil'
-import { PasswordValidation } from '../utils/matchPassword';
-import { ActivatedRoute, Params } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {PasswordValidation} from '../utils/matchPassword';
+import {Perfil} from '../../models/perfil';
+import {Usuario} from '../../models/usuario';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +11,12 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  user="usuario";
-  company="empresa"
+  user = 'usuario';
+  company = 'empresa';
 
   constructor(private fb: FormBuilder) {
     this.crearFormulario();
-   }
+  }
 
   ngOnInit(): void {
   }
@@ -35,15 +34,16 @@ export class LoginComponent implements OnInit {
   }
 
 
-  login(){
-    if(this.form.valid) {
-      let perfil = new Perfil();
-      let usuario = new Usuario();
-
-      perfil.nombre = this.form.value.nombre;
-      usuario.mail = this.form.value.mail;
-      usuario.clave = this.form.value.clave;
-      perfil.usuario = usuario;
+  login(): void {
+    if (this.form.valid) {
+      const usuario: Usuario = {
+        mail: this.form.value.mail,
+        clave: this.form.value.clave
+      };
+      const perfil: Perfil = {
+        nombre: this.form.value.nombre,
+        usuario
+      };
 
       console.log('objeto perfil');
       console.log(perfil);

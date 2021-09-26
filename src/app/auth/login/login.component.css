@@ -8,6 +8,12 @@
   /*border: 1px solid red;*/
 }
 
+.title_h{
+  color: #ff33cc;
+  text-align: center;
+  font-size: 250%;
+}
+
 .group{
   width: 45%;
   min-width: 200px;
@@ -64,9 +70,16 @@ input:-webkit-autofill {
 
 .registers{
   cursor: pointer;
+  color: #ff33cc;
+  text-decoration: none;
 }
 
 .registers:hover{
-  color: yellowgreen;
+  color: #ffa5e6;
   text-shadow: 1px 1px 1px black;
+}
+
+.btn_reg{
+  display: flex;
+  justify-content: flex-end;
 }

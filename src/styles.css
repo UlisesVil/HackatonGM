@@ -2,3 +2,50 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body{
+  background-color: #000000;
+}
+
+.mat-form-field .mat-input-element {
+  color: #ff7cdb;
+}
+.mat-form-field .mat-form-field-label {
+  color: #ff7cdb;
+}
+.mat-form-field .mat-form-field-underline {
+  background-color: #ff7cdb;
+}
+.mat-form-field .mat-form-field-ripple {
+  background-color: #ff7cdb;
+}
+.mat-form-field .mat-form-field-required-marker {
+  color: #ff7cdb;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #ff7cdb;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #ff7cdb;
+}
+.mat-form-field.mat-focused .mat-form-field-required-marker {
+  color: #ff7cdb;
+}
+.mat-form-field.mat-focused .mat-input-element {
+  color: #ff7cdb;
+}
+
+/*.mat-form-field.mat-form-field-invalid .mat-input-element {*/
+/*  color: #d91c1c;*/
+/*}*/
+/*.mat-form-field.mat-form-field-invalid .mat-form-field-label {*/
+/*  color: #d91c1c;*/
+/*}*/
+
+/*.mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {*/
+/*  color: #d91c1c;*/
+/*}*/
+
+/*.mat-form-field.mat-form-field-invalid .mat-form-field-ripple {*/
+/*  background-color: #d91c1c;*/
+/*}*/

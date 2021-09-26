@@ -1,6 +1,6 @@
-export class Usuario {
-    id: string
-    clave: string;
-    mail: string;
-    rol: string;
+export interface Usuario {
+    id?: string;
+    clave?: string;
+    mail?: string;
+    rol?: string;
 }

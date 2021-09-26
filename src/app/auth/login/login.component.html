@@ -1,72 +1,86 @@
 <div class="wrapper">
-  <form [formGroup]="form" (ngSubmit)="login()">
+  <div>
+    <div class="">
+      <h1 class="title_h">Hackathon Gentleman Programming 2021</h1>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <form [formGroup]="form" (ngSubmit)="login()">
 
-    <mat-form-field class="group">
-      <input
-        matInput
-        type="text"
-        name="nombre"
-        placeholder="Nombre"
-        formControlName="nombre"
-        required
-      >
-      <mat-error>
+        <mat-form-field class="group">
+          <input
+            matInput
+            type="text"
+            name="nombre"
+            placeholder="Nombre"
+            formControlName="nombre"
+            required
+          >
+          <mat-error>
         <span class="form_error">
           <strong>Por favor escribe tu nombre</strong>
         </span>
-      </mat-error>
-    </mat-form-field>
+          </mat-error>
+        </mat-form-field>
 
 
-    <mat-form-field class="group">
-      <input
-        matInput
-        type="text"
-        name="correo"
-        placeholder="Correo Electrónico"
-        formControlName="mail"
-        required
-      >
-      <mat-error>
+        <mat-form-field class="group">
+          <input
+            matInput
+            type="text"
+            name="correo"
+            placeholder="Correo Electrónico"
+            formControlName="mail"
+            required
+          >
+          <mat-error>
         <span class="form_error">
           <strong>Ingresa tu e-mail</strong>
         </span>
-      </mat-error>
-    </mat-form-field>
+          </mat-error>
+        </mat-form-field>
 
-    <mat-form-field class="group">
-      <input
-        matInput
-        type="password"
-        name="password"
-        placeholder="Password"
-        formControlName="clave"
-        required
-      >
-      <mat-error>
+        <mat-form-field class="group">
+          <input
+            matInput
+            type="password"
+            name="password"
+            placeholder="Password"
+            formControlName="clave"
+            required
+          >
+          <mat-error>
         <span class="form_error">
           <strong>Es necesario escribir una Contraseña</strong>
         </span>
-      </mat-error>
-    </mat-form-field>
+          </mat-error>
+        </mat-form-field>
 
-    <mat-form-field class="group">
-    <input
-      matInput
-      type="password"
-      name="passwordConfirm"
-      placeholder="Confirm Password"
-      formControlName="confirmPassword"
-      required
-    >
-    </mat-form-field>
+        <mat-form-field class="group">
+          <input
+            matInput
+            type="password"
+            name="passwordConfirm"
+            placeholder="Confirmar Password"
+            formControlName="confirmPassword"
+            required
+          >
+          <mat-error>
+        <span class="form_error">
+          <strong>Confirma tu email</strong>
+        </span>
+          </mat-error>
+        </mat-form-field>
 
-    <div class="buttonCont">
-      <a class="registers" [routerLink]="['/registro', user]">Registrar Usuario</a>
-      <a class="registers" [routerLink]="['/registro', company]">Registrar Empresa</a>
+        <div class="buttonCont">
+          <a class="registers" [routerLink]="['/registro', user]">Registrar Usuario</a>
+          <a class="registers" [routerLink]="['/registro', company]">Registrar Empresa</a>
+        </div>
+
+        <div class="btn_reg">
+          <button mat-raised-button color="primary" type="submit">Registro</button>
+        </div>
+
+      </form>
     </div>
-
-    <button mat-raised-button color="primary" type="submit">Registro</button>
-
-  </form>
+  </div>
 </div>
