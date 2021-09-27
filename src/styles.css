@@ -9,11 +9,15 @@ h1, h2, h3, h4, h5, h6 {
   color: #ff33cc;
 }
 
-.btn_pos{
+.btn_pos{ 
   width: 90%;
   padding: 10px;
   display: flex;
   justify-content: space-between;
+}
+
+#btn-register{
+  width: 100%;
 }
 
 .mat-form-field .mat-input-element {

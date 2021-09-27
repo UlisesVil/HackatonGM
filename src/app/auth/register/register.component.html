@@ -1,9 +1,16 @@
 <div class="wrapper">
 
   <div class="card-form">
-    <form [formGroup]="form">
+    
+    <div class="header-form">
       <h1 class="title-register">INGRESE DATOS {{form.value.entidad === 'empresa' ? 'DE LA' : 'DEL'}} {{form.value.entidad}}</h1>
+      <button mat-mini-fab color="primary" (click)="modalOff()" >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
 
+    <form [formGroup]="form">
+      <!--       <h1 class="title-register">INGRESE DATOS {{form.value.entidad === 'empresa' ? 'DE LA' : 'DEL'}} {{form.value.entidad}}</h1> -->
       <div>
         <mat-form-field appearance="fill" style="width: 95%; padding: 10px">
           <mat-label>Entidad</mat-label>
@@ -105,9 +112,9 @@
       </mat-form-field>
     </form>
 
-    <div class="btn_pos">
-      <button (click)="registrar()" mat-raised-button color="primary" type="submit">Registro</button>
-      <button mat-raised-button color="primary" (click)="modalOff()">Cerrar Registro</button>
+    <div  class="btn_pos">
+      <button id="btn-register" (click)="registrar()" mat-raised-button color="primary" type="submit">Registro</button>
+      <!--<button mat-raised-button color="primary" (click)="modalOff()">Cerrar Registro</button>-->
     </div>
   </div>
 </div>

@@ -1,8 +1,18 @@
 <div class="wrapper">
 
   <div class="card-form">
-    <form [formGroup]="form">
+    <div class="header-form">
       <h1 class="title-register">EDITAR</h1>
+
+
+      <button mat-mini-fab color="primary" (click)="modalOff()">
+        X-icon
+      </button>
+
+
+    </div>
+    <form [formGroup]="form">
+
 
       <mat-form-field class="group">
         <input matInput type="text" name="nombre" placeholder="Nombre"
@@ -31,8 +41,8 @@
     </form>
 
     <div class="btn_pos">
-      <button mat-raised-button color="primary" type="submit">Guardar</button>
-      <button mat-raised-button color="primary" (click)="modalOff()">Cerrar</button>
+      <button id="btn-register" mat-raised-button color="primary" type="submit">Guardar</button>
+
     </div>
   </div>
 </div>

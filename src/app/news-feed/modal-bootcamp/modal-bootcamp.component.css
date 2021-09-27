@@ -25,6 +25,16 @@
   padding: 0 10px 10px;
 }
 
+.header-form{
+  background-color: rgb(42, 43, 43);
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+
+}
+
 .card-form{
   min-width: 200px;
   width: 500px;

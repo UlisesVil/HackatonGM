@@ -18,6 +18,16 @@ textarea{
   resize: none;
 }
 
+.header-form{
+  background-color: rgb(42, 43, 43);
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+
+}
+
 .title-register{
   text-align: center;
   text-transform: uppercase;
