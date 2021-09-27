@@ -1,15 +1,18 @@
-<div style="display: flex; justify-content: space-between; align-items: center">
-  <h1>Bootcamps</h1>
-  <h2 style="border: solid 1px #fff; padding: 1px 10px; cursor: pointer" (click)="goDetails()">
-    {{rolUsuario !== 'usuario' ? 'Mis bootcamps' : 'Mis inscripciones'}}
-  </h2>
-  <button mat-raised-button color="primary" type="submit" (click)="onAdd()">Crear bootcamp</button>
+<div class="wrapper">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1>Bootcamps</h1>
+    <h2 style="border: solid 1px #fff; padding: 1px 10px; cursor: pointer" (click)="goDetails()">
+      {{rolUsuario !== 'usuario' ? 'Mis bootcamps' : 'Mis inscripciones'}}
+    </h2>
+    <button mat-raised-button color="primary" type="submit" (click)="onAdd()">Crear bootcamp</button>
+  </div>
+  <div *ngFor="let bootcamp of bootcamps; index as i">
+    <app-item [bootcamp]="bootcamp" [areDetails]="areDetails" [isUser]="rolUsuario === 'usuario'"></app-item>
+  </div>
+  
+  <app-modal-bootcamp
+    (deactivateRegister)="modalOff($event)"
+    *ngIf="modal">
+  </app-modal-bootcamp>
+  
 </div>
-<div *ngFor="let bootcamp of bootcamps; index as i">
-  <app-item [bootcamp]="bootcamp" [areDetails]="areDetails" [isUser]="rolUsuario === 'usuario'"></app-item>
-</div>
-
-<app-modal-bootcamp
-  (deactivateRegister)="modalOff($event)"
-  *ngIf="modal">
-</app-modal-bootcamp>
